@@ -397,13 +397,200 @@ h1 .tango::after {
   border-left: 3px solid var(--accent);
 }
 
+/* ===== ADD SECTION ===== */
+.add-section {
+  background: var(--bg-warm);
+  border: 2.5px solid var(--ink);
+  border-radius: 18px;
+  padding: 22px 24px;
+  box-shadow: 0 4px 0 var(--ink);
+  margin-bottom: 28px;
+}
+.add-header {
+  margin-bottom: 14px;
+}
+.add-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.add-title .badge {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--bg);
+  padding: 2px 9px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.add-sub {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  margin-top: 4px;
+}
+.add-textarea {
+  width: 100%;
+  min-height: 110px;
+  padding: 14px 16px;
+  font-family: 'Space Mono', 'Manrope', monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--bg);
+  border: 2px solid var(--ink);
+  border-radius: 12px;
+  resize: vertical;
+  transition: box-shadow 0.15s, transform 0.15s;
+}
+.add-textarea:focus {
+  outline: none;
+  box-shadow: 0 3px 0 var(--ink);
+  transform: translateY(-1px);
+}
+.add-textarea::placeholder {
+  color: var(--ink-faint);
+  font-style: italic;
+}
+.add-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+.btn-add {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--bg);
+  background: var(--ink);
+  padding: 10px 24px;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 3px 0 var(--accent);
+  transition: all 0.15s;
+}
+.btn-add:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 0 var(--accent);
+}
+.btn-add:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 0 var(--accent);
+}
+.add-message {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink-faint);
+}
+.add-message.error {
+  color: #C73E1D;
+  font-weight: 600;
+}
+
+/* ===== TOAST ===== */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 32px;
+  transform: translateX(-50%) translateY(120%);
+  background: var(--ink);
+  color: var(--bg);
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
+  z-index: 999;
+  opacity: 0;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.25s;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  pointer-events: none;
+}
+.toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+.toast .toast-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px; height: 18px;
+  background: var(--accent);
+  color: var(--bg);
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* ===== DOWNLOAD BUTTON ===== */
+.btn-download {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink);
+  background: var(--yellow);
+  padding: 7px 14px;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.15s;
+}
+.btn-download:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 0 var(--ink);
+}
+.btn-download:active {
+  transform: translateY(1px);
+}
+
+/* ===== DELETE BUTTON ===== */
+.btn-delete {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  background: transparent;
+  padding: 8px 14px;
+  border: 1.5px solid var(--border-strong);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.btn-delete:hover {
+  color: #C73E1D;
+  border-color: #C73E1D;
+}
+
 /* ===== ENTRY ACTIONS (share, etc.) ===== */
 .entry-actions {
   margin-top: 20px;
   padding-top: 16px;
   border-top: 1.5px dashed var(--border-strong);
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
   gap: 8px;
 }
 
@@ -545,6 +732,33 @@ h1 .tango::after {
     </div>
   </header>
 
+  <!-- ADD SECTION -->
+  <section class="add-section">
+    <div class="add-header">
+      <h2 class="add-title">
+        <span class="badge">Add</span>
+        単語を追加
+      </h2>
+      <p class="add-sub">Claude(または ChatGPT・Gemini)に英単語を尋ねて、返ってきた JS オブジェクトを下に貼り付けてください。</p>
+    </div>
+    <textarea
+      class="add-textarea"
+      id="addTextarea"
+      placeholder='{
+  phrase: "deadline",
+  type: "noun",
+  meaningEN: "...",
+  meaningJP: "...",
+  ...
+}'
+      spellcheck="false"
+      autocomplete="off"></textarea>
+    <div class="add-actions">
+      <button class="btn-add" id="btnAdd">追加 →</button>
+      <span class="add-message" id="addMessage"></span>
+    </div>
+  </section>
+
   <!-- TOOLBAR -->
   <div class="toolbar">
     <div class="search-wrap">
@@ -571,6 +785,7 @@ h1 .tango::after {
       <span>of <span id="totalCount">0</span> entries</span>
     </div>
     <div class="export-group">
+      <button class="btn-download" onclick="downloadCurrentHTML()">📥 ノートをダウンロード</button>
       <button class="btn-export" onclick="exportCSV()">Export CSV</button>
       <button class="btn-export" onclick="exportJSON()">Export JSON</button>
     </div>
@@ -586,8 +801,16 @@ h1 .tango::after {
 
 </div>
 
+<!-- TOAST -->
+<div class="toast" id="toast" role="status" aria-live="polite">
+  <span class="toast-icon">✓</span>
+  <span id="toastMessage">追加しました</span>
+</div>
+
 <script>
 // ===== ENTRIES (AIから返ってきたJSオブジェクトを、この配列に追加してください) =====
+// このマーカーは「ノートをダウンロード」機能で entries を正確に置き換えるために使われます。削除しないでください。
+// === ENTRIES_START ===
 const entries = [
   // 例:
   // {
@@ -601,6 +824,7 @@ const entries = [
   //   dateAdded: '2026-05-18'
   // },
 ];
+// === ENTRIES_END ===
 
 const SPEAKER_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>';
 
@@ -730,6 +954,139 @@ function normalizeEntries() {
   });
 }
 
+// ===== localStorage 連携 =====
+const STORAGE_KEY = 'mytangonote_v1';
+
+function loadFromStorage() {
+  try {
+    const stored = localStorage.getItem(STORAGE_KEY);
+    if (!stored) return false;
+    const parsed = JSON.parse(stored);
+    if (!Array.isArray(parsed)) return false;
+    // 配列を空にして、保存済みのエントリーで埋め直す
+    entries.length = 0;
+    parsed.forEach(e => entries.push(e));
+    return true;
+  } catch (err) {
+    console.warn('localStorage の読み込みに失敗しました:', err);
+    return false;
+  }
+}
+
+function saveToStorage() {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(entries));
+  } catch (err) {
+    console.warn('localStorage への保存に失敗しました:', err);
+  }
+}
+
+// ===== エントリーの追加 =====
+function parseEntryObject(text) {
+  const trimmed = text.trim();
+  if (!trimmed) throw new Error('テキストが空です');
+
+  // 末尾のセミコロンやカンマを除去
+  let cleaned = trimmed.replace(/[;,]\s*$/, '');
+
+  // オブジェクトを取り出す: { から始まり } で終わる部分
+  const start = cleaned.indexOf('{');
+  const end = cleaned.lastIndexOf('}');
+  if (start === -1 || end === -1 || end <= start) {
+    throw new Error('JS オブジェクトの形式が見つかりません');
+  }
+  cleaned = cleaned.substring(start, end + 1);
+
+  // JS オブジェクトリテラルを評価 (Function constructor を使用、安全なスコープ)
+  let obj;
+  try {
+    obj = new Function('"use strict"; return (' + cleaned + ');')();
+  } catch (err) {
+    throw new Error('テキストを JS オブジェクトとして読み取れません: ' + err.message);
+  }
+
+  if (typeof obj !== 'object' || obj === null || Array.isArray(obj)) {
+    throw new Error('オブジェクトの形式ではありません');
+  }
+
+  // 必須フィールドをチェック
+  const required = ['phrase', 'type', 'meaningEN', 'meaningJP', 'exampleEN', 'exampleJP'];
+  const missing = required.filter(f => !obj[f] || typeof obj[f] !== 'string');
+  if (missing.length > 0) {
+    throw new Error('以下のフィールドが不足しています: ' + missing.join(', '));
+  }
+
+  // dateAdded が無ければ今日の日付を入れる
+  if (!obj.dateAdded) {
+    const d = new Date();
+    obj.dateAdded = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+  }
+
+  return obj;
+}
+
+function addEntryFromText(text) {
+  const obj = parseEntryObject(text);
+  // 新しい id を割り当て
+  const maxId = entries.reduce((max, e) => Math.max(max, parseInt(e.id) || 0), 0);
+  obj.id = String(maxId + 1);
+  entries.push(obj);
+  saveToStorage();
+  return obj;
+}
+
+// ===== エントリーの削除 =====
+function deleteEntry(id) {
+  const idx = entries.findIndex(e => e.id === id);
+  if (idx === -1) return;
+  const phrase = entries[idx].phrase;
+  if (!confirm('「' + phrase + '」を削除しますか?')) return;
+  entries.splice(idx, 1);
+  saveToStorage();
+  renderTypeFilters();
+  renderEntries();
+  showToast('削除しました');
+}
+
+// ===== トースト通知 =====
+let toastTimer = null;
+function showToast(message) {
+  const toast = document.getElementById('toast');
+  const msgEl = document.getElementById('toastMessage');
+  msgEl.textContent = message;
+  toast.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => {
+    toast.classList.remove('show');
+  }, 2400);
+}
+
+// ===== 現在のノートを HTML としてダウンロード =====
+function downloadCurrentHTML() {
+  // 現在の HTML 全体を取得
+  const htmlSource = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+
+  // entries を最新の内容で置き換え
+  const entriesJSON = JSON.stringify(entries, null, 2);
+  const newEntriesBlock =
+    '// === ENTRIES_START ===\nconst entries = ' + entriesJSON + ';\n// === ENTRIES_END ===';
+
+  const newHTML = htmlSource.replace(
+    /\/\/ === ENTRIES_START ===[\s\S]*?\/\/ === ENTRIES_END ===/,
+    newEntriesBlock
+  );
+
+  // ダウンロード
+  const blob = new Blob([newHTML], { type: 'text/html;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'my-tango-note.html';
+  a.click();
+  URL.revokeObjectURL(url);
+  showToast('ダウンロードしました');
+}
+
 function renderEntries() {
   const list = getFiltered();
   const container = document.getElementById('entries');
@@ -767,6 +1124,7 @@ function renderEntries() {
       </div>
       ${e.notes ? `<div class="entry-section"><div class="section-label">Notes</div><div class="entry-notes">${escapeHTML(e.notes)}</div></div>` : ''}
       <div class="entry-actions">
+        <button class="btn-delete" data-delete-id="${escapeHTML(e.id)}" aria-label="Delete entry">削除</button>
         <button class="btn-share" data-share-id="${escapeHTML(e.id)}" aria-label="Share to X">
           ${SHARE_SVG} X でシェア
         </button>
@@ -844,12 +1202,64 @@ document.getElementById('entries').addEventListener('click', e => {
     shareEntry(shareBtn.dataset.shareId);
     return;
   }
+  const deleteBtn = e.target.closest('.btn-delete');
+  if (deleteBtn) {
+    deleteEntry(deleteBtn.dataset.deleteId);
+    return;
+  }
+});
+
+// ===== 追加 UI =====
+const addTextarea = document.getElementById('addTextarea');
+const addMessage = document.getElementById('addMessage');
+const btnAdd = document.getElementById('btnAdd');
+
+function clearAddMessage() {
+  addMessage.textContent = '';
+  addMessage.classList.remove('error');
+}
+
+function setAddError(text) {
+  addMessage.textContent = text;
+  addMessage.classList.add('error');
+}
+
+btnAdd.addEventListener('click', () => {
+  clearAddMessage();
+  const text = addTextarea.value;
+  if (!text.trim()) {
+    setAddError('テキストを貼り付けてください');
+    return;
+  }
+  try {
+    const obj = addEntryFromText(text);
+    // 成功
+    addTextarea.value = '';
+    renderTypeFilters();
+    renderEntries();
+    showToast('「' + obj.phrase + '」を追加しました');
+  } catch (err) {
+    setAddError(err.message);
+  }
+});
+
+// テキストエリアにフォーカスが入ったらエラー表示をクリア
+addTextarea.addEventListener('focus', clearAddMessage);
+
+// Cmd/Ctrl + Enter で追加(キーボードショートカット)
+addTextarea.addEventListener('keydown', e => {
+  if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') {
+    e.preventDefault();
+    btnAdd.click();
+  }
 });
 
 window.addEventListener('beforeunload', () => {
   if (speechSupported) window.speechSynthesis.cancel();
 });
 
+// ===== 初期化 =====
+loadFromStorage();
 normalizeEntries();
 renderTypeFilters();
 renderEntries();
